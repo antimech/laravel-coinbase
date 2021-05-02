@@ -13,5 +13,5 @@ return [
         // 'charge:pending' => \App\Jobs\CoinbaseWebhooks\HandlePendingCharge::class,
         // 'charge:resolved' => \App\Jobs\CoinbaseWebhooks\HandleResolvedCharge::class,
     ],
-    'webhookModel' => Shakurov\Coinbase\Models\CoinbaseWebhookCall::class,
+    'webhookModel' => Antimech\Coinbase\Models\CoinbaseWebhookCall::class,
 ];

@@ -1,6 +1,6 @@
 <?php
 
-namespace Shakurov\Coinbase\Facades;
+namespace Antimech\Coinbase\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

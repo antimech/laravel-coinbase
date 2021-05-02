@@ -1,6 +1,6 @@
 # Contributing
 
-Contributions are **welcome** and will be fully **credited**. We accept contributions via Pull Requests on [Github](https://github.com/shakurov/laravel-coinbase/pulls).
+Contributions are **welcome** and will be fully **credited**. We accept contributions via Pull Requests on [Github](https://github.com/antimech/laravel-coinbase/pulls).
 
 ## Pull Requests
 

@@ -1,5 +1,5 @@
 {
-    "name": "shakurov/coinbase",
+    "name": "antimech/coinbase",
     "description": "Laravel wrapper for the Coinbase Commerce API",
     "keywords": [
         "laravel",
@@ -11,6 +11,9 @@
         {
             "name": "Vladimir Shakurov",
             "email": "vladimir@shakurov.com"
+        },
+        {
+            "name": "Arthur (antimech)"
         }
     ],
     "require": {
@@ -23,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Shakurov\\Coinbase\\": "src/"
+            "Antimech\\Coinbase\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Shakurov\\Coinbase\\Tests\\": "tests/"
+            "Antimech\\Coinbase\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -37,10 +40,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Shakurov\\Coinbase\\CoinbaseServiceProvider"
+                "Antimech\\Coinbase\\CoinbaseServiceProvider"
             ],
             "aliases": {
-                "Coinbase": "Shakurov\\Coinbase\\Facades\\Coinbase"
+                "Coinbase": "Antimech\\Coinbase\\Facades\\Coinbase"
             }
         }
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Shakurov\Coinbase;
+namespace Antimech\Coinbase;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;

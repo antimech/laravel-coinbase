@@ -1,11 +1,11 @@
 <?php
 
-namespace Shakurov\Coinbase\Models;
+namespace Antimech\Coinbase\Models;
 
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
-use Shakurov\Coinbase\Exceptions\WebhookFailed;
+use Antimech\Coinbase\Exceptions\WebhookFailed;
 
 class CoinbaseWebhookCall extends Model
 {
