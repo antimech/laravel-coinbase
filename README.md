@@ -78,6 +78,16 @@ Show a charge:
 $charge = Coinbase::getCharge($chargeId);
 ```
 
+Cancel a charge:
+```php
+$charge = Coinbase::cancelCharge($chargeId);
+```
+
+Resolve a charge:
+```php
+$charge = Coinbase::resolveCharge($chargeId);
+```
+
 ### Checkouts
 
 List checkouts:
@@ -90,6 +100,7 @@ Create a checkout:
 $checkout = Coinbase::createCheckout([
     'name' => 'Name',
     'description' => 'Description',
+    'requested_info' => [],
     'local_price' => [
         'amount' => 100,
         'currency' => 'USD',
@@ -118,6 +129,47 @@ $checkout = Coinbase::updateCheckout($checkoutId, [
 ]);
 ```
 
+Delete a checkout:
+```php
+$checkout = Coinbase::deleteCheckout($checkoutId);
+```
+
+### Invoices
+
+List invoices:
+```php
+$invoices = Coinbase::getInvoices();
+```
+
+Create an invoice:
+```php
+$invoice = Coinbase::createInvoice([
+    'business_name' => 'Business Name',
+    'customer_email' => 'customer@example.com',
+    'customer_name' => 'Customer Name',
+    'local_price' => [
+        'amount' => 100,
+        'currency' => 'USD',
+    ],
+    'memo' => 'A memo/description for the invoice',
+]);
+```
+
+Show an invoice:
+```php
+$invoice = Coinbase::getInvoice($invoiceId);
+```
+
+Void an invoice:
+```php
+$invoice = Coinbase::voidInvoice($invoiceId);
+```
+
+Resolve an invoice:
+```php
+$invoice = Coinbase::resolveInvoice($invoiceId);
+```
+
 ### Events
 
 List events:
@@ -132,7 +184,7 @@ $event = Coinbase::getEvent($eventId);
 
 ### Webhooks
 
-Coinbase Commerce will send out webhooks for several event types. You can find the [full list of events types](https://commerce.coinbase.com/docs/api/#webhooks) in the Coinbase Commerce documentation.
+Coinbase Commerce will send out webhooks for several event types. You can find the [full list of events types](https://docs.cloud.coinbase.com/commerce/docs/webhooks-events#events) in the Coinbase Commerce documentation.
 
 Coinbase Commerce will sign all requests hitting the webhook url of your app. This package will automatically verify if the signature is valid. If it is not, the request was probably not sent by Coinbase Commerce.
  
@@ -235,7 +287,7 @@ class ChargeCreatedListener implements ShouldQueue
 
 We highly recommend that you make the event listener queueable, as this will minimize the response time of the webhook requests. This allows you to handle more Coinbase Commerce webhook requests and avoid timeouts.
 
-The above example is only one way to handle events in Laravel. To learn the other options, read [the Laravel documentation on handling events](https://laravel.com/docs/5.6/events). 
+The above example is only one way to handle events in Laravel. To learn the other options, read [the Laravel documentation on handling events](https://laravel.com/docs/10.x/events). 
 
 ## Advanced usage
 
