@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static array getEvents(array $query = []) Lists all events.
  * @method static array getEvent(string $eventId) Retrieves an existing event.
  *
- * @see \Shakurov\Coinbase\Coinbase
+ * @see \Antimech\Coinbase\Coinbase
  */
 class Coinbase extends Facade
 {
@@ -32,6 +32,6 @@ class Coinbase extends Facade
      */
     protected static function getFacadeAccessor(): string
     {
-        return 'Shakurov\Coinbase\Coinbase';
+        return 'Antimech\Coinbase\Coinbase';
     }
 }
