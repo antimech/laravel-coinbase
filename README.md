@@ -217,12 +217,11 @@ class HandleCreatedCharge implements ShouldQueue
     /** @var \Antimech\Coinbase\Models\CoinbaseWebhookCall */
     public $webhookCall;
 
-    public function __construct(CoinbaseWebhookCall $webhookCall)
-    {
-        $this->webhookCall = $webhookCall;
-    }
+    public function __construct(
+        CoinbaseWebhookCall $webhookCall,
+    ) {}
 
-    public function handle()
+    public function handle(): void
     {
         // do your work here
         
@@ -276,7 +275,7 @@ use Antimech\Coinbase\Models\CoinbaseWebhookCall;
 
 class ChargeCreatedListener implements ShouldQueue
 {
-    public function handle(CoinbaseWebhookCall $webhookCall)
+    public function handle(CoinbaseWebhookCall $webhookCall): void
     {
         // do your work here
 
@@ -312,7 +311,7 @@ use Antimech\Coinbase\Models\CoinbaseWebhookCall;
 
 class MyCustomWebhookCall extends CoinbaseWebhookCall
 {
-    public function process()
+    public function process(): void
     {
         // do some custom stuff beforehand
         

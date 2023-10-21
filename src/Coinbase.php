@@ -38,8 +38,8 @@ class Coinbase
      *
      * @param string $method
      * @param string $uri
-     * @param null|array $query
-     * @param null|array $params
+     * @param array $query
+     * @param array $params
      * @return array
      */
     private function makeRequest(string $method, string $uri, array $query = [], array $params = [])
@@ -56,7 +56,7 @@ class Coinbase
     /**
      * Lists all charges.
      *
-     * @param null|array $query
+     * @param array $query
      * @return array
      */
     public function getCharges(array $query = [])
@@ -81,7 +81,7 @@ class Coinbase
      * @param  string  $chargeId  Id or short-code for a previously created charge
      * @return array
      */
-    public function getCharge($chargeId)
+    public function getCharge(string $chargeId)
     {
         return $this->makeRequest('get', "charges/{$chargeId}");
     }
@@ -94,7 +94,7 @@ class Coinbase
      * @param  string  $chargeId  Id or short-code for a previously created charge
      * @return array
      */
-    public function cancelCharge($chargeId)
+    public function cancelCharge(string $chargeId)
     {
         return $this->makeRequest('post', "charges/{$chargeId}/cancel");
     }
@@ -107,7 +107,7 @@ class Coinbase
      * @param  string  $chargeId  Id or short-code for a previously created charge
      * @return array
      */
-    public function resolveCharge($chargeId)
+    public function resolveCharge(string $chargeId)
     {
         return $this->makeRequest('post', "charges/{$chargeId}/resolve");
     }
@@ -115,7 +115,7 @@ class Coinbase
     /**
      * Lists all checkouts.
      *
-     * @param null|array $query
+     * @param array $query
      * @return array
      */
     public function getCheckouts(array $query = [])
@@ -140,7 +140,7 @@ class Coinbase
      * @param  string  $checkoutId
      * @return array
      */
-    public function getCheckout($checkoutId)
+    public function getCheckout(string $checkoutId)
     {
         return $this->makeRequest('get', "checkouts/{$checkoutId}");
     }
@@ -152,7 +152,7 @@ class Coinbase
      * @param  array   $params
      * @return array
      */
-    public function updateCheckout($checkoutId, array $params = [])
+    public function updateCheckout(string $checkoutId, array $params = [])
     {
         return $this->makeRequest('put', "checkouts/{$checkoutId}", $params);
     }
@@ -163,7 +163,7 @@ class Coinbase
      * @param  string  $checkoutId
      * @return array
      */
-    public function deleteCheckout($checkoutId)
+    public function deleteCheckout(string $checkoutId)
     {
         return $this->makeRequest('delete', "checkouts/{$checkoutId}");
     }
@@ -171,7 +171,7 @@ class Coinbase
     /**
      * Lists all invoices.
      *
-     * @param null|array $query
+     * @param array $query
      * @return array
      */
     public function getInvoices(array $query = [])
@@ -196,7 +196,7 @@ class Coinbase
      * @param  string  $invoiceId Id or short-code for a previously created invoice
      * @return array
      */
-    public function getInvoice($invoiceId)
+    public function getInvoice(string $invoiceId)
     {
         return $this->makeRequest('get', "invoices/{$invoiceId}");
     }
@@ -209,7 +209,7 @@ class Coinbase
      * @param  string  $invoiceId Id or short-code for a previously created invoice
      * @return array
      */
-    public function voidInvoice($invoiceId)
+    public function voidInvoice(string $invoiceId)
     {
         return $this->makeRequest('post', "invoices/{$invoiceId}/void}");
     }
@@ -222,7 +222,7 @@ class Coinbase
      * @param  string  $invoiceId Id or short-code for a previously created invoice
      * @return array
      */
-    public function resolveInvoice($invoiceId)
+    public function resolveInvoice(string $invoiceId)
     {
         return $this->makeRequest('post', "invoices/{$invoiceId}/resolve}");
     }
@@ -230,7 +230,7 @@ class Coinbase
     /**
      * Lists all events.
      *
-     * @param null|array $query
+     * @param array $query
      * @return array
      */
     public function getEvents(array $query = [])
@@ -244,7 +244,7 @@ class Coinbase
      * @param  string  $eventId
      * @return array
      */
-    public function getEvent($eventId)
+    public function getEvent(string $eventId)
     {
         return $this->makeRequest('get', "events/{$eventId}");
     }

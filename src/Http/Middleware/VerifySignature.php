@@ -4,10 +4,11 @@ namespace Antimech\Coinbase\Http\Middleware;
 
 use Closure;
 use Antimech\Coinbase\Exceptions\WebhookFailed;
+use Symfony\Component\HttpFoundation\Response;
 
 class VerifySignature
 {
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next): Response
     {
         $signature = $request->header('X-CC-Webhook-Signature');
 

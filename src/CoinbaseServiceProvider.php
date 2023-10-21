@@ -9,16 +9,14 @@ class CoinbaseServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->publishes([
             __DIR__.'/../config/coinbase.php' => config_path('coinbase.php'),
         ], 'config');
 
-        $timestamp = date('Y_m_d_His', time());
+        $timestamp = '2018_06_01_215631';
 
         $this->publishes([
             __DIR__.'/../database/migrations/create_coinbase_webhook_calls_table.php.stub' => database_path("migrations/{$timestamp}_create_coinbase_webhook_calls_table.php"),
@@ -29,10 +27,8 @@ class CoinbaseServiceProvider extends ServiceProvider
 
     /**
      * Register the application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(
             __DIR__.'/../config/coinbase.php', 'coinbase'
