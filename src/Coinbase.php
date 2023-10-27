@@ -204,7 +204,7 @@ class Coinbase
      */
     public function voidInvoice(string $invoiceId): array
     {
-        return $this->makeRequest('post', "invoices/{$invoiceId}/void}");
+        return $this->makeRequest('post', "invoices/{$invoiceId}/void");
     }
 
     /**
@@ -217,7 +217,7 @@ class Coinbase
      */
     public function resolveInvoice(string $invoiceId): array
     {
-        return $this->makeRequest('post', "invoices/{$invoiceId}/resolve}");
+        return $this->makeRequest('post', "invoices/{$invoiceId}/resolve");
     }
 
     /**
