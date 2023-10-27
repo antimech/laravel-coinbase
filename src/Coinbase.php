@@ -175,9 +175,9 @@ class Coinbase
      * @param  array  $params
      * @return array
      */
-    public function createInvoice(array $params = []): array
+    public function createInvoice(array $params): array
     {
-        return $this->makeRequest('post', 'invoices', $params);
+        return $this->makeRequest('post', 'invoices', [], $params);
     }
 
     /**

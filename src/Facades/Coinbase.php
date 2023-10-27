@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static array updateCheckout(string $checkoutId, array $params = []) Updates an existing checkout.
  * @method static array deleteCheckout(string $checkoutId) Deletes an existing checkout.
  * @method static array getInvoices() Lists all invoices.
- * @method static array createInvoice(array $params = []) Creates a new invoice.
+ * @method static array createInvoice(array $params) Creates a new invoice.
  * @method static array getInvoice(string $invoiceId) Retrieves an existing invoice by supplying its id or 8 character short-code.
  * @method static array voidInvoice(string $invoiceId) Voids an existing invoice by supplying its id or 8 character short-code.
  * @method static array resolveInvoice(string $invoiceId) Resolves an existing, unresolved invoice by supplying its id or 8 character short-code.
