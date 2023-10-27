@@ -10,7 +10,7 @@ composer require antimech/coinbase
 
 The service provider will automatically register itself.
 
-You must publish the config file with:
+You may publish the config file with:
 ```bash
 php artisan vendor:publish --provider="Antimech\Coinbase\CoinbaseServiceProvider" --tag="config"
 ```
