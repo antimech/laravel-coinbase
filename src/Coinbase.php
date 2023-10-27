@@ -49,12 +49,11 @@ class Coinbase
     /**
      * Lists all charges.
      *
-     * @param array $query
      * @return array
      */
-    public function getCharges(array $query = []): array
+    public function getCharges(): array
     {
-        return $this->makeRequest('get', 'charges', $query);
+        return $this->makeRequest('get', 'charges');
     }
 
     /**
