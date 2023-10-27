@@ -4,7 +4,6 @@ namespace Antimech\Coinbase;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use Illuminate\Support\Facades\Log;
 
 class Coinbase
 {
