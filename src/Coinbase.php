@@ -38,16 +38,13 @@ class Coinbase
      * @param array $query
      * @param array $params
      * @return array
+     * @throws GuzzleException
      */
     private function makeRequest(string $method, string $uri, array $query = [], array $params = [])
     {
-        try {
-            $response = $this->client->request($method, $uri, ['query' => $query, 'body' => json_encode($params)]);
+        $response = $this->client->request($method, $uri, ['query' => $query, 'body' => json_encode($params)]);
 
-            return json_decode((string) $response->getBody(), true);
-        } catch(GuzzleException $e) {
-            Log::error($e->getMessage());
-        }
+        return json_decode((string) $response->getBody(), true);
     }
 
     /**
