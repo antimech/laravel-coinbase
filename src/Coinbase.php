@@ -13,10 +13,7 @@ class Coinbase
      */
     private const BASE_URI = 'https://api.commerce.coinbase.com';
 
-    /**
-     * @var Client
-     */
-    private $client;
+    private Client $client;
 
     public function __construct()
     {
