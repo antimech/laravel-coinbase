@@ -39,7 +39,7 @@ class Coinbase
      * @return array
      * @throws GuzzleException
      */
-    private function makeRequest(string $method, string $uri, array $query = [], array $params = [])
+    private function makeRequest(string $method, string $uri, array $query = [], array $params = []): array
     {
         $response = $this->client->request($method, $uri, ['query' => $query, 'body' => json_encode($params)]);
 
@@ -52,7 +52,7 @@ class Coinbase
      * @param array $query
      * @return array
      */
-    public function getCharges(array $query = [])
+    public function getCharges(array $query = []): array
     {
         return $this->makeRequest('get', 'charges', $query);
     }
@@ -63,7 +63,7 @@ class Coinbase
      * @param  array  $params
      * @return array
      */
-    public function createCharge(array $params = [])
+    public function createCharge(array $params = []): array
     {
         return $this->makeRequest('post', 'charges', $params);
     }
@@ -74,7 +74,7 @@ class Coinbase
      * @param  string  $chargeId  Id or short-code for a previously created charge
      * @return array
      */
-    public function getCharge(string $chargeId)
+    public function getCharge(string $chargeId): array
     {
         return $this->makeRequest('get', "charges/{$chargeId}");
     }
@@ -87,7 +87,7 @@ class Coinbase
      * @param  string  $chargeId  Id or short-code for a previously created charge
      * @return array
      */
-    public function cancelCharge(string $chargeId)
+    public function cancelCharge(string $chargeId): array
     {
         return $this->makeRequest('post', "charges/{$chargeId}/cancel");
     }
@@ -100,7 +100,7 @@ class Coinbase
      * @param  string  $chargeId  Id or short-code for a previously created charge
      * @return array
      */
-    public function resolveCharge(string $chargeId)
+    public function resolveCharge(string $chargeId): array
     {
         return $this->makeRequest('post', "charges/{$chargeId}/resolve");
     }
@@ -111,7 +111,7 @@ class Coinbase
      * @param array $query
      * @return array
      */
-    public function getCheckouts(array $query = [])
+    public function getCheckouts(array $query = []): array
     {
         return $this->makeRequest('get', 'checkouts', $query);
     }
@@ -122,7 +122,7 @@ class Coinbase
      * @param  array  $params
      * @return array
      */
-    public function createCheckout(array $params = [])
+    public function createCheckout(array $params = []): array
     {
         return $this->makeRequest('post', 'checkouts', [], $params);
     }
@@ -133,7 +133,7 @@ class Coinbase
      * @param  string  $checkoutId
      * @return array
      */
-    public function getCheckout(string $checkoutId)
+    public function getCheckout(string $checkoutId): array
     {
         return $this->makeRequest('get', "checkouts/{$checkoutId}");
     }
@@ -145,7 +145,7 @@ class Coinbase
      * @param  array   $params
      * @return array
      */
-    public function updateCheckout(string $checkoutId, array $params = [])
+    public function updateCheckout(string $checkoutId, array $params = []): array
     {
         return $this->makeRequest('put', "checkouts/{$checkoutId}", $params);
     }
@@ -156,7 +156,7 @@ class Coinbase
      * @param  string  $checkoutId
      * @return array
      */
-    public function deleteCheckout(string $checkoutId)
+    public function deleteCheckout(string $checkoutId): array
     {
         return $this->makeRequest('delete', "checkouts/{$checkoutId}");
     }
@@ -167,7 +167,7 @@ class Coinbase
      * @param array $query
      * @return array
      */
-    public function getInvoices(array $query = [])
+    public function getInvoices(array $query = []): array
     {
         return $this->makeRequest('get', 'invoices', $query);
     }
@@ -178,7 +178,7 @@ class Coinbase
      * @param  array  $params
      * @return array
      */
-    public function createInvoice(array $params = [])
+    public function createInvoice(array $params = []): array
     {
         return $this->makeRequest('post', 'invoices', $params);
     }
@@ -189,7 +189,7 @@ class Coinbase
      * @param  string  $invoiceId Id or short-code for a previously created invoice
      * @return array
      */
-    public function getInvoice(string $invoiceId)
+    public function getInvoice(string $invoiceId): array
     {
         return $this->makeRequest('get', "invoices/{$invoiceId}");
     }
@@ -202,7 +202,7 @@ class Coinbase
      * @param  string  $invoiceId Id or short-code for a previously created invoice
      * @return array
      */
-    public function voidInvoice(string $invoiceId)
+    public function voidInvoice(string $invoiceId): array
     {
         return $this->makeRequest('post', "invoices/{$invoiceId}/void}");
     }
@@ -215,7 +215,7 @@ class Coinbase
      * @param  string  $invoiceId Id or short-code for a previously created invoice
      * @return array
      */
-    public function resolveInvoice(string $invoiceId)
+    public function resolveInvoice(string $invoiceId): array
     {
         return $this->makeRequest('post', "invoices/{$invoiceId}/resolve}");
     }
@@ -226,7 +226,7 @@ class Coinbase
      * @param array $query
      * @return array
      */
-    public function getEvents(array $query = [])
+    public function getEvents(array $query = []): array
     {
         return $this->makeRequest('get', 'events', $query);
     }
@@ -237,7 +237,7 @@ class Coinbase
      * @param  string  $eventId
      * @return array
      */
-    public function getEvent(string $eventId)
+    public function getEvent(string $eventId): array
     {
         return $this->makeRequest('get', "events/{$eventId}");
     }
