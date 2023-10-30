@@ -64,7 +64,7 @@ class Coinbase
      */
     public function createCharge(array $params = []): array
     {
-        return $this->makeRequest('post', 'charges', $params);
+        return $this->makeRequest('post', 'charges', [], $params);
     }
 
     /**
