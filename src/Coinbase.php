@@ -145,7 +145,7 @@ class Coinbase
      */
     public function updateCheckout(string $checkoutId, array $params = []): array
     {
-        return $this->makeRequest('put', "checkouts/{$checkoutId}", $params);
+        return $this->makeRequest('put', "checkouts/{$checkoutId}", [], $params);
     }
 
     /**
