@@ -220,12 +220,11 @@ class Coinbase
     /**
      * Lists all events.
      *
-     * @param array $query
      * @return array
      */
-    public function getEvents(array $query = []): array
+    public function getEvents(): array
     {
-        return $this->makeRequest('get', 'events', $query);
+        return $this->makeRequest('get', 'events');
     }
 
     /**
