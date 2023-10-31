@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static array cancelCharge(string $chargeId) Cancels an existing charge by supplying its id or 8 character short-code.
  * @method static array resolveCharge(string $chargeId) Resolves an existing, unresolved charge by supplying its id or 8 character short-code.
  * @method static array getCheckouts() Lists all checkouts.
- * @method static array createCheckout(array $params = []) Creates a new checkout.
+ * @method static array createCheckout(array $params) Creates a new checkout.
  * @method static array getCheckout(string $checkoutId) Retrieves an existing checkout.
  * @method static array updateCheckout(string $checkoutId, array $params = []) Updates an existing checkout.
  * @method static array deleteCheckout(string $checkoutId) Deletes an existing checkout.

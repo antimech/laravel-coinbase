@@ -120,7 +120,7 @@ class Coinbase
      * @param  array  $params
      * @return array
      */
-    public function createCheckout(array $params = []): array
+    public function createCheckout(array $params): array
     {
         return $this->makeRequest('post', 'checkouts', [], $params);
     }
