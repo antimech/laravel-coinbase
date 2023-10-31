@@ -1,5 +1,13 @@
 # Laravel wrapper for the Coinbase Commerce API
 
+This composer package is an SDK to Coinbase Commerce. It follows the "Laravel Way" and takes a lot of manual work from a developer.
+
+[![Latest Stable Version](http://poser.pugx.org/antimech/coinbase/v)](https://packagist.org/packages/antimech/coinbase)
+[![Total Downloads](http://poser.pugx.org/antimech/coinbase/downloads)](https://packagist.org/packages/antimech/coinbase)
+[![Latest Unstable Version](http://poser.pugx.org/antimech/coinbase/v/unstable)](https://packagist.org/packages/antimech/coinbase)
+[![License](http://poser.pugx.org/antimech/coinbase/license)](https://packagist.org/packages/antimech/coinbase)
+[![PHP Version Require](http://poser.pugx.org/antimech/coinbase/require/php)](https://packagist.org/packages/antimech/coinbase)
+
 ## Installation
 
 You can install the package via composer:
