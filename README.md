@@ -240,12 +240,12 @@ class HandleCreatedCharge implements ShouldQueue
 
 We highly recommend that you make this job queueable, because this will minimize the response time of the webhook requests. This allows you to handle more Coinbase Commerce webhook requests and avoid timeouts.
 
-After having created your job you must register it at the `jobs` array in the `coinbase.php` config file. The key should be the name of [the coinbase commerce event type](https://commerce.coinbase.com/docs/api/#webhooks) where but with the `.` replaced by `_`. The value should be the fully qualified classname.
+After having created your job you must register it at the `webhookJobs` array in the `coinbase.php` config file. The key should be the name of [the coinbase commerce event type](https://commerce.coinbase.com/docs/api/#webhooks) where but with the `.` replaced by `_`. The value should be the fully qualified classname.
 
 ```php
 // config/coinbase.php
 
-'jobs' => [
+'webhookJobs' => [
     'charge:created' => \App\Jobs\CoinbaseWebhooks\HandleCreatedCharge::class,
 ],
 ```
