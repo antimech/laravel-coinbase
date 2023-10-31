@@ -310,7 +310,7 @@ CoinbaseWebhookCall::find($id)->process();
 
 ### Performing custom logic
 
-You can add some custom logic that should be executed before and/or after the scheduling of the queued job by using your own model. You can do this by specifying your own model in the `model` key of the `coinbase` config file. The class should extend `Antimech\Coinbase\Models\CoinbaseWebhookCall`.
+You can add some custom logic that should be executed before and/or after the scheduling of the queued job by using your own model. You can do this by specifying your own model in the `webhookModel` key of the `coinbase.php` config file. The class should extend `Antimech\Coinbase\Models\CoinbaseWebhookCall`.
 
 Here's an example:
 
