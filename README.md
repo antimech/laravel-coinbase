@@ -221,12 +221,9 @@ use Antimech\Coinbase\Models\CoinbaseWebhookCall;
 class HandleCreatedCharge implements ShouldQueue
 {
     use InteractsWithQueue, Queueable, SerializesModels;
-    
-    /** @var \Antimech\Coinbase\Models\CoinbaseWebhookCall */
-    public $webhookCall;
 
     public function __construct(
-        CoinbaseWebhookCall $webhookCall,
+        public CoinbaseWebhookCall $webhookCall,
     ) {}
 
     public function handle(): void
