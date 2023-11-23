@@ -1,6 +1,6 @@
 # Laravel wrapper for the Coinbase Commerce API
 
-This composer package is an SDK to Coinbase Commerce. It follows the "Laravel Way" and takes a lot of manual work from a developer.
+This composer package is a SDK to Coinbase Commerce. It follows the "Laravel Way" and takes a lot of manual work from a developer.
 
 [![Latest Stable Version](http://poser.pugx.org/antimech/coinbase/v)](https://packagist.org/packages/antimech/coinbase)
 [![Total Downloads](http://poser.pugx.org/antimech/coinbase/downloads)](https://packagist.org/packages/antimech/coinbase)
