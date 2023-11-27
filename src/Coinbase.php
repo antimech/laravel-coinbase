@@ -107,11 +107,12 @@ class Coinbase
     /**
      * Lists all checkouts.
      *
+     * @param array $query
      * @return array
      */
-    public function getCheckouts(): array
+    public function getCheckouts(array $query = []): array
     {
-        return $this->makeRequest('get', 'checkouts');
+        return $this->makeRequest('get', 'checkouts', $query);
     }
 
     /**
