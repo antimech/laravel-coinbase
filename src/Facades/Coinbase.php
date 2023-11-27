@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static array getInvoice(string $invoiceId) Retrieves an existing invoice by supplying its id or 8 character short-code.
  * @method static array voidInvoice(string $invoiceId) Voids an existing invoice by supplying its id or 8 character short-code.
  * @method static array resolveInvoice(string $invoiceId) Resolves an existing, unresolved invoice by supplying its id or 8 character short-code.
- * @method static array getEvents() Lists all events.
+ * @method static array getEvents(array $query = []) Lists all events.
  * @method static array getEvent(string $eventId) Retrieves an existing event.
  *
  * @see \Antimech\Coinbase\Coinbase
