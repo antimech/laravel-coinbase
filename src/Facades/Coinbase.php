@@ -5,7 +5,7 @@ namespace Antimech\Coinbase\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static array getCharges() Lists all charges.
+ * @method static array getCharges(array $query = []) Lists all charges.
  * @method static array createCharge(array $params) Creates a new charge.
  * @method static array getCharge(string $chargeId) Retrieves an existing charge by supplying its id or 8 character short-code.
  * @method static array cancelCharge(string $chargeId) Cancels an existing charge by supplying its id or 8 character short-code.
