@@ -162,11 +162,12 @@ class Coinbase
     /**
      * Lists all invoices.
      *
+     * @param array $query
      * @return array
      */
-    public function getInvoices(): array
+    public function getInvoices(array $query = []): array
     {
-        return $this->makeRequest('get', 'invoices');
+        return $this->makeRequest('get', 'invoices', $query);
     }
 
     /**
