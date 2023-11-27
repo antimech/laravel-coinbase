@@ -24,7 +24,7 @@ class TestCase extends OrchestraTestCase
 
     protected function determineCoinbaseSignature(array $payload): string
     {
-        $secret = config('coinbase.webhookSecret');
+        $secret = config('coinbase.webhook_secret');
 
         $signature = hash_hmac('sha256', json_encode($payload), $secret);
 

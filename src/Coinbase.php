@@ -16,8 +16,8 @@ class Coinbase
 
     public function __construct()
     {
-        $apiKey = config('coinbase.apiKey');
-        $apiVersion = config('coinbase.apiVersion');
+        $apiKey = config('coinbase.api_key');
+        $apiVersion = config('coinbase.api_version');
 
         $this->client = new Client([
             'base_uri' => Coinbase::BASE_URI,

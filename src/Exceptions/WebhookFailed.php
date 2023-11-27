@@ -16,12 +16,12 @@ class WebhookFailed extends Exception
 
     public static function invalidSignature($signature): static
     {
-        return new static("The signature `{$signature}` found in the header named `X-CC-Webhook-Signature` is invalid. Make sure that the `coinbase.webhookSecret` config key is set to the value you found on the Coinbase Commerce dashboard. If you are caching your config try running `php artisan clear:cache` to resolve the problem.");
+        return new static("The signature `{$signature}` found in the header named `X-CC-Webhook-Signature` is invalid. Make sure that the `coinbase.webhook_secret` config key is set to the value you found on the Coinbase Commerce dashboard. If you are caching your config try running `php artisan clear:cache` to resolve the problem.");
     }
 
     public static function sharedSecretNotSet(): static
     {
-        return new static('The Coinbase Commerce webhook shared secret is not set. Make sure that the `coinbase.webhookSecret` config key is set to the value you found on the Coinbase Commerce dashboard.');
+        return new static('The Coinbase Commerce webhook shared secret is not set. Make sure that the `coinbase.webhook_secret` config key is set to the value you found on the Coinbase Commerce dashboard.');
     }
     
     public static function jobClassDoesNotExist(string $jobClass, CoinbaseWebhookCall $webhookCall): static

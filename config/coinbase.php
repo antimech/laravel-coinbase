@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'apiKey' => env('COINBASE_API_KEY'),
-    'apiVersion' => env('COINBASE_API_VERSION', '2018-03-22'),
+    'api_key' => env('COINBASE_API_KEY'),
+    'api_version' => env('COINBASE_API_VERSION', '2018-03-22'),
 
-    'webhookSecret' => env('COINBASE_WEBHOOK_SECRET'),
-    'webhookJobs' => [
+    'webhook_secret' => env('COINBASE_WEBHOOK_SECRET'),
+    'webhook_jobs' => [
         // 'charge:created' => \App\Jobs\CoinbaseWebhooks\HandleCreatedCharge::class,
         // 'charge:confirmed' => \App\Jobs\CoinbaseWebhooks\HandleConfirmedCharge::class,
         // 'charge:failed' => \App\Jobs\CoinbaseWebhooks\HandleFailedCharge::class,
@@ -13,5 +13,5 @@ return [
         // 'charge:pending' => \App\Jobs\CoinbaseWebhooks\HandlePendingCharge::class,
         // 'charge:resolved' => \App\Jobs\CoinbaseWebhooks\HandleResolvedCharge::class,
     ],
-    'webhookModel' => Antimech\Coinbase\Models\CoinbaseWebhookCall::class,
+    'webhook_model' => Antimech\Coinbase\Models\CoinbaseWebhookCall::class,
 ];

@@ -18,7 +18,7 @@ class WebhookController extends Controller
     {
         $payload = $request->input();
 
-        $model = config('coinbase.webhookModel');
+        $model = config('coinbase.webhook_model');
 
         $coinbaseWebhookCall = $model::create([
             'type' =>  $payload['event']['type'] ?? '',

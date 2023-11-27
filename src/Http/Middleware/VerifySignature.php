@@ -25,7 +25,7 @@ class VerifySignature
 
     protected function isValid(string $signature, string $payload): bool
     {
-        $secret = config('coinbase.webhookSecret');
+        $secret = config('coinbase.webhook_secret');
 
         if (empty($secret)) {
             throw WebhookFailed::sharedSecretNotSet();

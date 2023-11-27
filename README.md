@@ -27,11 +27,11 @@ This is the contents of the config file that will be published at `config/coinba
 
 ```php
 return [
-    'apiKey' => env('COINBASE_API_KEY'),
-    'apiVersion' => env('COINBASE_API_VERSION', '2018-03-22'),
+    'api_key' => env('COINBASE_API_KEY'),
+    'api_version' => env('COINBASE_API_VERSION', '2018-03-22'),
     
-    'webhookSecret' => env('COINBASE_WEBHOOK_SECRET'),
-    'webhookJobs' => [
+    'webhook_secret' => env('COINBASE_WEBHOOK_SECRET'),
+    'webhook_jobs' => [
         // 'charge:created' => \App\Jobs\CoinbaseWebhooks\HandleCreatedCharge::class,
         // 'charge:confirmed' => \App\Jobs\CoinbaseWebhooks\HandleConfirmedCharge::class,
         // 'charge:failed' => \App\Jobs\CoinbaseWebhooks\HandleFailedCharge::class,
@@ -39,12 +39,12 @@ return [
         // 'charge:pending' => \App\Jobs\CoinbaseWebhooks\HandlePendingCharge::class,
         // 'charge:resolved' => \App\Jobs\CoinbaseWebhooks\HandleResolvedCharge::class,
     ],
-    'webhookModel' => Antimech\Coinbase\Models\CoinbaseWebhookCall::class,
+    'webhook_model' => Antimech\Coinbase\Models\CoinbaseWebhookCall::class,
 ];
 
 ```
 
-In the `webhookSecret` key of the config file you should add a valid webhook secret. You can find the secret used at [the webhook configuration settings on the Coinbase Commerce dashboard](https://commerce.coinbase.com/dashboard/settings).
+In the `webhook_secret` key of the config file you should add a valid webhook secret. You can find the secret used at [the webhook configuration settings on the Coinbase Commerce dashboard](https://commerce.coinbase.com/dashboard/settings).
 
 Next, you must publish the migration with:
 ```bash
@@ -237,12 +237,12 @@ class HandleCreatedCharge implements ShouldQueue
 
 We highly recommend that you make this job queueable, because this will minimize the response time of the webhook requests. This allows you to handle more Coinbase Commerce webhook requests and avoid timeouts.
 
-After having created your job you must register it at the `webhookJobs` array in the `coinbase.php` config file. The key should be the name of [the coinbase commerce event type](https://commerce.coinbase.com/docs/api/#webhooks) where but with the `.` replaced by `_`. The value should be the fully qualified classname.
+After having created your job you must register it at the `webhook_jobs` array in the `coinbase.php` config file. The key should be the name of [the coinbase commerce event type](https://commerce.coinbase.com/docs/api/#webhooks) where but with the `.` replaced by `_`. The value should be the fully qualified classname.
 
 ```php
 // config/coinbase.php
 
-'webhookJobs' => [
+'webhook_jobs' => [
     'charge:created' => \App\Jobs\CoinbaseWebhooks\HandleCreatedCharge::class,
 ],
 ```
@@ -307,7 +307,7 @@ CoinbaseWebhookCall::find($id)->process();
 
 ### Performing custom logic
 
-You can add some custom logic that should be executed before and/or after the scheduling of the queued job by using your own model. You can do this by specifying your own model in the `webhookModel` key of the `coinbase.php` config file. The class should extend `Antimech\Coinbase\Models\CoinbaseWebhookCall`.
+You can add some custom logic that should be executed before and/or after the scheduling of the queued job by using your own model. You can do this by specifying your own model in the `webhook_model` key of the `coinbase.php` config file. The class should extend `Antimech\Coinbase\Models\CoinbaseWebhookCall`.
 
 Here's an example:
 

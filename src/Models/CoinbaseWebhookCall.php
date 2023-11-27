@@ -56,7 +56,7 @@ class CoinbaseWebhookCall extends Model
     {
         $jobConfigKey = str_replace('.', '_', $eventType);
         
-        return config("coinbase.webhookJobs.{$jobConfigKey}", '');
+        return config("coinbase.webhook_jobs.{$jobConfigKey}", '');
     }
 
     protected function clearException(): static
