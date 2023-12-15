@@ -76,7 +76,7 @@ class Coinbase
      */
     public function getCharge(string $chargeId): array
     {
-        return $this->makeRequest('get', "charges/{$chargeId}");
+        return $this->makeRequest('get', "charges/$chargeId");
     }
 
     /**
@@ -89,7 +89,7 @@ class Coinbase
      */
     public function cancelCharge(string $chargeId): array
     {
-        return $this->makeRequest('post', "charges/{$chargeId}/cancel");
+        return $this->makeRequest('post', "charges/$chargeId/cancel");
     }
 
     /**
@@ -102,7 +102,7 @@ class Coinbase
      */
     public function resolveCharge(string $chargeId): array
     {
-        return $this->makeRequest('post', "charges/{$chargeId}/resolve");
+        return $this->makeRequest('post', "charges/$chargeId/resolve");
     }
 
     /**
@@ -135,7 +135,7 @@ class Coinbase
      */
     public function getCheckout(string $checkoutId): array
     {
-        return $this->makeRequest('get', "checkouts/{$checkoutId}");
+        return $this->makeRequest('get', "checkouts/$checkoutId");
     }
 
     /**
@@ -147,7 +147,7 @@ class Coinbase
      */
     public function updateCheckout(string $checkoutId, array $params = []): array
     {
-        return $this->makeRequest('put', "checkouts/{$checkoutId}", [], $params);
+        return $this->makeRequest('put', "checkouts/$checkoutId", [], $params);
     }
 
     /**
@@ -158,7 +158,7 @@ class Coinbase
      */
     public function deleteCheckout(string $checkoutId): array
     {
-        return $this->makeRequest('delete', "checkouts/{$checkoutId}");
+        return $this->makeRequest('delete', "checkouts/$checkoutId");
     }
 
     /**
@@ -191,7 +191,7 @@ class Coinbase
      */
     public function getInvoice(string $invoiceId): array
     {
-        return $this->makeRequest('get', "invoices/{$invoiceId}");
+        return $this->makeRequest('get', "invoices/$invoiceId");
     }
 
     /**
@@ -204,7 +204,7 @@ class Coinbase
      */
     public function voidInvoice(string $invoiceId): array
     {
-        return $this->makeRequest('put', "invoices/{$invoiceId}/void");
+        return $this->makeRequest('put', "invoices/$invoiceId/void");
     }
 
     /**
@@ -217,7 +217,7 @@ class Coinbase
      */
     public function resolveInvoice(string $invoiceId): array
     {
-        return $this->makeRequest('put', "invoices/{$invoiceId}/resolve");
+        return $this->makeRequest('put', "invoices/$invoiceId/resolve");
     }
 
     /**
@@ -239,6 +239,6 @@ class Coinbase
      */
     public function getEvent(string $eventId): array
     {
-        return $this->makeRequest('get', "events/{$eventId}");
+        return $this->makeRequest('get', "events/$eventId");
     }
 }
