@@ -13,7 +13,8 @@
             "email": "vladimir@shakurov.com"
         },
         {
-            "name": "Arthur (antimech)"
+            "name": "Arthur (antimech)",
+            "homepage": "https://antimech.github.io/"
         }
     ],
     "require": {
