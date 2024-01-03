@@ -20,7 +20,7 @@ First, you need to configure the environment variables. Copy the default phpunit
 $ cp phpunit.xml.dist phpunit.xml
 ```
 
-Edit `phpunit.xml` file, fill the `COINBASE_API_KEY` and `COINBASE_WEBHOOK_SECRET` env variables according to the data from your Coinbase Commerce account.
+Edit `phpunit.xml` file, fill the `COINBASE_COMMERCE_API_KEY` and `COINBASE_COMMERCE_WEBHOOK_SECRET` env variables according to the data from your Coinbase Commerce account.
 
 Now run phpunit:
 ```bash

@@ -27,10 +27,10 @@ This is the contents of the config file that will be published at `config/coinba
 
 ```php
 return [
-    'api_key' => env('COINBASE_API_KEY'),
-    'api_version' => env('COINBASE_API_VERSION', '2018-03-22'),
+    'api_key' => env('COINBASE_COMMERCE_API_KEY'),
+    'api_version' => env('COINBASE_COMMERCE_API_VERSION', '2018-03-22'),
     
-    'webhook_secret' => env('COINBASE_WEBHOOK_SECRET'),
+    'webhook_secret' => env('COINBASE_COMMERCE_WEBHOOK_SECRET'),
     'webhook_jobs' => [
         // 'charge:created' => \App\Jobs\CoinbaseWebhooks\HandleCreatedCharge::class,
         // 'charge:confirmed' => \App\Jobs\CoinbaseWebhooks\HandleConfirmedCharge::class,
